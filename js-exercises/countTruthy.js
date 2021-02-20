@@ -1,8 +1,17 @@
-function countTruthy(values) {
+function countTruthyUsingIncludes(values) {
     const falsyValues = [0, false, '', null, undefined, NaN];
     let cnt = 0;
     for(let i=0; i < values.length; i++) {
         if (!falsyValues.includes(values[i]))
+            cnt++;
+    }
+    return cnt;
+}
+
+function countTruthy(values) {
+    let cnt = 0;
+    for(let value of values) {
+        if(value)
             cnt++;
     }
     return cnt;
