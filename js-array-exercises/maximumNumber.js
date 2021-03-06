@@ -3,8 +3,7 @@ const max = getMax(numbers);
 console.log(max);
 
 function getMax(array) {
-    return array.reduce( (max, num) => {
-        max = (num > max) ? num : max;
-        return max;
-    }, Number.MIN_SAFE_INTEGER);
+    if(array.length === 0) return undefined;
+
+    return array.reduce( (max, num) => (num > max) ? num : max);
 }
